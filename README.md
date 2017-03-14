@@ -1,1 +1,6 @@
-# hello1024.github.io
+---
+title: This is my title
+layout: post
+---
+
+Test page
