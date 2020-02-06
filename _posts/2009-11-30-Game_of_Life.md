@@ -1,0 +1,165 @@
+---
+layout: post
+title: Game of Life
+---
+
+I knocked up a quick "game of life" on html canvas in 20 mins - enjoy!  (this isn't pretty or neat code - don't use it as an example!)
+
+<script>
+
+var grid;
+var canvas;
+var aniTimer;
+var stepcount;
+
+function drawGrid() {
+  var context = canvas.getContext('2d');
+  for (i=0; i<20; i++)
+    for (j=0; j<20; j++) {
+      if (grid[getIndex(i,j)]==1)
+        context.fillStyle = "rgb(255,0,0)";
+      else
+        context.fillStyle = "rgb(128,128,128)";
+      context.fillRect(i*10, j*10, 9, 9);
+    }
+  document.getElementById("step").innerHTML = stepcount;
+}
+
+function initGrid()
+{
+  canvas = document.getElementById("grid");
+  grid = new Array(400);
+  clear();
+    
+  grid[30]=1;
+  grid[50]=1;
+  grid[70]=1;
+  drawGrid();
+}
+
+function getIndex(i,j) {
+  return (i+20)%20+20*((j+20)%20);
+}
+
+function stepGrid()
+{
+  stepcount++;
+  newGrid = new Array(400);
+  //for (i=0; i<400; i++) 
+  //  newGrid[i]=0;
+    
+  for (i=0; i<20; i++)
+    for (j=0; j<20; j++) {
+      count = grid[getIndex(i-1,j-1)] + 
+              grid[getIndex(i-1,j  )] +
+              grid[getIndex(i-1,j+1)] +
+              grid[getIndex(i  ,j-1)] + 
+              grid[getIndex(i  ,j+1)] +
+              grid[getIndex(i+1,j-1)] + 
+              grid[getIndex(i+1,j  )] +
+              grid[getIndex(i+1,j+1)];
+      
+      if (grid[getIndex(i,j)]==1) {
+        newGrid[getIndex(i,j)] = ((count<=1)||(count>=4))?0:1;
+      } else {
+        newGrid[getIndex(i,j)] = (count==3)?1:0;
+      }
+              
+    }
+  grid = newGrid;
+  drawGrid();
+  
+
+}
+
+function animate() {
+  aniTimer = setInterval(stepGrid, 100);
+}
+
+function stop() {
+  clearInterval(aniTimer);
+}
+
+function clear() {
+  for (i=0; i<400; i++) 
+    grid[i]=0;
+  stepcount=0;
+}
+
+function gridMove(event) {
+  x=Math.floor(event.offsetX/10);
+  y=Math.floor(event.offsetY/10);
+  
+  //if (event.button==1) 
+  grid[getIndex(x,y)]= 1;
+  if (event.button==2) grid[getIndex(x,y)]= 0;
+  drawGrid();
+}
+
+
+</script>
+
+<style>
+#all {
+  background: -webkit-gradient(radial, 0 0, 50, 0 140, 90, from(#f4f201), to(rgba(228, 199,0,0)), color-stop(80%, #e4c700));
+  border: 1px solid #aaa;
+  border-radius:10px;
+  width:250px;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:50px;
+  -webkit-box-shadow: 5px 5px 5px #eee;
+  padding-bottom: 10px;
+}
+#title {
+  font-family: "Arial";
+  border-bottom: 1px double #aaa;
+  padding-right:20px;
+  text-align:right;
+}
+
+
+#title h1 {
+margin-bottom:0px;
+padding-bottom:0px;
+text-stroke: 1px #fff;
+text-shadow: #666 1px 1px 2px;
+}
+
+#title h6 {
+text-stroke: 1px #fff;
+text-shadow: #666 1px 1px 1px
+text-align:right;
+margin-top:0px;
+padding-top:0px;
+margin-bottom:5px;
+padding-bottom:5px;
+}
+
+#all canvas {
+margin:10px;
+}
+
+</style>
+
+
+<div id="all">
+  <div id="title">
+    <h1>Game Of Life</h1>
+    <h6>Oliver Mattos</h6>
+  </div>
+  <div>Step is: <span id="step">-</span></div>
+  <canvas id="grid" width="200" height="200px" onmousemove="gridMove(event)"> Canvas support missing </canvas>
+  <div id="controls">
+    <input type=button value="step" onclick="stepGrid();" />
+    <input type=button value="animate" onclick="animate();" />
+    <input type=button value="stop" onclick="stop();" />
+    <input type=button value="clear" onclick="clear();" />
+  </div>
+</div>
+
+
+<script>
+initGrid();
+</script>

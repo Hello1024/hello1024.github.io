@@ -1,0 +1,18 @@
+---
+layout: post
+title: The Chrome OS - hardware identified
+---
+
+Browsing around the Chromium open source project I found a little <a href="http://codereview.chromium.org/164208/patch/1/2">snippet of info Google probably didn't want to make public</a>.
+
+Turns out Googles new Chrome OS will be targeted at the <b>Cortex A8 CPU</b>, which varies from 600Mhz to 1Ghz.
+
+You don't find those in desktop computers.  These beasts are more like mobile phone and set top box CPU's, as it says on the <a href="http://www.arm.com/products/CPUs/ARM_Cortex-A8.html">product page</a>.  They sort of make sense, since Google announced Freescale and Qualcomm as partners, both of who make ARM processors like that.
+
+Also, it looks like Chrome is going to struggle to keep up with desktop browsers on that CPU.  Chrome is pretty much the best performer in terms of real speed, but when you put it on a CPU which is only 1/40th the speed of Intels latest CPU, it's bound to go pretty slow.  (That 1/40th figure is because the Cortex A8 can do 2,000 MIPS, and Intels latest extreme processors can do 80,000 MIPS - MIPS are most comparable because you can't compare GHz between different types of CPU's)
+
+So what might these go into?  I'm guessing the target is even lower cost systems than netbooks.  When you've got a processor like that with next to no power consumption, you can scale down the battery and still get great battery life, and eliminate all the fans and cooling.  Since Googles Chrome OS is mostly web based, I can see the elimination of the hard drive soon as well.  With all that done, the cost should be much reduced, and battery life increased, but unfortunately at the expense of performance and compatibility (since this type of processor can't run Windows or Windows programs.)
+
+From this info alone it would be premature to guess what form factor this package would come in - I can imagine it as a cheap tablet or netbook, or possibly even as a 2nd operating system on a TV.  It could also be a pretty nice add-on to a projector (imagine being able to browse the web on a pocket size portable battery powered projector, all without a PC)
+
+One does have to wonder why Android isn't a suitable fit for this, but I'm guessing android is missing features, like for example a proper windowing system for big screens.

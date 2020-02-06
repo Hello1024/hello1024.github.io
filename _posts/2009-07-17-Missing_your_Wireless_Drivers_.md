@@ -1,0 +1,30 @@
+---
+layout: post
+title: Missing your Wireless Drivers?
+---
+
+Well I might have just the thing...
+
+The attached firmware is ready to use with Ubuntu Hardy 8.04, Intrepid 8.10, and Jaunty 9.04 (i386 and amd64), and probably many other operating systems. It is particularly useful when no internet access is available to use apt-get or the Restricted Drivers Manager.
+
+These files are for the b43 and b43legacy drivers, (aka bcm43xx). You will need these files if you get:
+
+ERROR: Firmware file "b43/ucode5.fw" not found or load failed.
+<h4>Installation Instructions</h4>
+
+Extract the contents of the zip file into /lib/firmware/ - thats all there is to it, the rest should "just work". Fwcutter is NOT required to use this - these files have already been extracted.
+
+Note: I provide these firmware files in good faith, however there is ABSOLUTELY NO SUPPORT from Broadcom, since while it's identical firmware to that provided on their download site, it's been seperated from the Windows driver and installer to make them easier to use on Linux
+
+<font color=red>NOTICE:  There is a newer version of the firmware than this, and for some models of wireless card this significantly improves range and reliability when in a place with hundreds of wireless devices nearby, for example a city</font>
+
+Additional:  I heard some people are having trouble installing this, so these instructions give step by step instructions:
+
+Open your home folder by clicking "places > Home Folder"
+Make a folder called "wireless" (File > create folder), and tell it to extract to that folder. (you can drag and drop from the zip file to the new "wireless folder")  After that, you should see "b43" and "b43legacy" in there.
+
+Now the next step is to move them to the right location.  To do this, you need to open up the terminal (Applications > Accessories > Terminal), and then type this exactly (or copy and paste the text):
+
+sudo cp -r ~/wireless/* /lib/firmware/
+
+then press enter.  You'll be asked for your password to authorise the copy.  If it doesn't give any errors then all was successful.  You can delete the "wireless" folder, and reboot your computer to make the driver active.

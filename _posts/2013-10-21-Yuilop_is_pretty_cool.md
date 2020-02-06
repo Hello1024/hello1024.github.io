@@ -1,0 +1,22 @@
+---
+layout: post
+title: Yuilop is pretty cool
+---
+
+It's basicly Google Voice, but for the UK.
+
+The good bits:
+<ul>
+<li>It works on wifi or mobile data.
+<li>It's free.
+<li>It seemlessly can send texts from the website
+</ul>
+
+It's really cool apart from a few things:
+<ul>
+<li>It has a credit system for paying for calls to non members, except it has no way to buy credits.   You can earn them from incoming calls though.
+<li>It doesn't let me port in my number, I have to get a new one.
+<li>It notifies me every time I earn a credit.  Except I really don't want to be notified 20 times a day.   A summary somewhere in the app would suffice.
+<li>They have a cool website www.yuilop.me.  Except yuilop.me is a different website.
+<li>It doesn't seem awfully reliable, especially with multiple devices on the same account or when on 3g.  I think they need some kind of auto-fallback to the standard phone network if it can't contact the mobile app within ~3 seconds.
+</ul>

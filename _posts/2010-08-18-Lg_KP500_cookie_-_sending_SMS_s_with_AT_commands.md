@@ -1,0 +1,22 @@
+---
+layout: post
+title: Lg KP500 cookie - sending SMS's with AT commands
+---
+
+In short - it doesn't work.  That means if you connect the phone to a computer, you CANNOT get the computer to send a text message for you.
+
+It will give "+CMS ERROR: 314", which means "The sim card is busy".
+
+If you try to send a stored message you will get "+CME ERROR:" - yep - thats right it doesn't even meet the spec and give an error number...
+
+That occurs if you try text mode or PDU mode.  It occurs over bluetooth or usb cable.  It occurs if the messaging app on the phone is open or closed. 
+
+Things you can do though:
+
+You can put a message into the outbox in the "waiting..." state, and then manually send it with the phone ui.
+
+You can read/write all messages from the phone to the pc
+
+You can receive messages, including getting event notifications so you don't need to poll.
+
+If you work for LG, PLEASE consider fixing this...

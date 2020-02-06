@@ -1,0 +1,18 @@
+---
+layout: post
+title: FM - Improved
+---
+
+You can find the new version of the PiFm radio transmitter at http://www.icrobotics.co.uk/wiki/index.php/Turning_the_Raspberry_Pi_Into_an_FM_Transmitter
+
+It now uses just 5% of the cpu instead of 100%.  It allows you to pipe audio into it from other programs.  It uses DMA, and has an audio buffer for constant rate glitch free playback.
+
+Finally, it also implements FM pre-emphesis, which gives the resulting sound the correct amount of "bass" and noise immunity.
+
+The FM pre-emphesis filter is described elsewhere on the web, but nobody has presented an algorithm to generate such a signal.  Various questions have been asked on forums, yet gone unanswered.   MATLAB can't generate such a filter for you, because the magnitude response tends to infinity as the frequency tends to infinity, and hence the filter wouldn't work.
+
+In the real world, the FM signal is bandlimited, and it turns out the implementation of such a filter is easy:
+
+out[n] = in[n] + (in[n-1]-in[n])/(1-tau*samplerate)
+
+That also boils down to a nice two tap FIR filter!

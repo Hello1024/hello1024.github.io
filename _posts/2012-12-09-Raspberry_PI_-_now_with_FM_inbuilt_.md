@@ -1,0 +1,11 @@
+---
+layout: post
+title: Raspberry PI - now with FM inbuilt!
+---
+
+So you looked down the Raspberry Pi spec sheet but weren't happy they didn't include an FM transmitter?    No worries!  I found it's possible to transmit FM using the clock generator built into the broadcom chipset.   Just hook up a bit of wire as an antenna, and you're good to go.
+
+
+Code and examples and a mini-explanation of how it works are to be found here:
+
+http://www.icrobotics.co.uk/wiki/index.php/Turning_the_Raspberry_Pi_Into_an_FM_Transmitter

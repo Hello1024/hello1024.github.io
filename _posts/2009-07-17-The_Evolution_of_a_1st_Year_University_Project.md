@@ -1,0 +1,60 @@
+---
+layout: post
+title: The Evolution of a 1st Year University Project
+---
+
+The assignment:  Make a computer program to simulate the movement of a pendulum.
+
+Now, while to the laziest of you, that might just be typing y=sin(x) into <a href="http://en.wikipedia.org/wiki/MATLAB">Matlab</a>, I decided to take it a few steps further.
+
+As with any problem, I wanted to generalise the solution as much as possible, so I could re-use it for other things.  In this case, I realized simulating a pendulum is just a simple subset of simulating <em>any</em> object.  Therefore, I made a general physics simulator.
+
+Next, I had to choose how to do it - I was given this list of technologies I could use for the assignment:
+<ul><li><a href="http://en.wikipedia.org/wiki/CodeGear_Delphi">Delphi</a></li></ul>
+So, from that list, having weighed up all the options, I reluctantly chose Delphi. 
+
+It turns out, that to simulate a pendulum, all I need to simulate are two main things - a "rod", and a "mass".  If you have a mass on the end of a rod and you swing it, it acts just like a pendulum - excellent.  The problem was my thirst for "generalisable" things overcame me again, and I decided to make the simulator simulate more things than just rods - I wanted to be able to simulate strings, springs, and rods.  As it turns out, all these three are pretty similar, and just need different equations governing how they work.
+
+Talking of equations, I had to figure out exactly how I was going to simulate all these things.  I rewound through my school physics lessons to remember all the defining equations for things, and came out with this list:
+<ul>
+<li>F=ma - the acceleration of an object is proportional to the applied force</li>
+<li>F=mg - the downward force on an object is proportional to it's mass and gravity</li>
+<li>F=kx - the force on an object due to an attached spring is proportional to the extension of that spring</li>
+</ul>
+By combining all these, I can come up with an equation for the acceleration of an object a = g + kx/m.  This equation needs a bit of magic to make it work in three dimensions by considering each part to be a vector, but that's pretty trivial.  I also wanted my objects to collide realistically (think a bouncing ball), so since I'd already figured how a spring works (F=kx), I simulated the surface of each mass as a spring as well, so when they hit each other, they would rebound.
+
+The next problem though is although I know a, the acceleration, what I really want to know is the position of the objects.  Now, in mathematical terms, what I really want to do is integrate a twice, and I arrive at the position (recall v = dx/dt, a=dv/dt, where x=position, v=velocity, t=time, and a=acceleration).  The problem is integration isn't so easy in Delphi, because I can't represent all the other variables as continuous time smooth algebraic functions, so I decided to bodge (um, approximate) it by using the <a href="http://en.wikipedia.org/wiki/Trapezoidal_rule">trapezium rule</a>.  It's a pretty simple rule that basically says if the acceleration is a constant 10, and the velocity 1 second ago was 5, now the velocity will be 15, and in 1 second, the velocity will be 25. (all numbers are <a href="http://en.wikipedia.org/wiki/International_System_of_Units#Units">SI units</a>) My program uses this simple rule simply re-doing all calculations every few thousandths of a second on all the objects in my simulation.
+
+So, after all that, I've now got a pretty simple simulator.  It basicly has a list of masses, and a list of constraints (springs etc.), and every few milliseconds will go through every mass in the list, and calculate the force on it due to gravity, and the force on it due to any attached springs (which it gets from the springs list), and from that force calculates the acceleration, and then from the acceleration can calculate the velocity, and then from that the position - easy!
+
+Next I wanted to "show" the results.  To begin with I had a very "simple" interface, where all the results were just written into a file like this:
+<code>
+Time=0
+Mass1 X = 1.0000000
+Mass1 Y = 0.0000000
+Mass1 Z = 0.0000000
+
+Mass2 X = 0.0000000
+Mass2 Y = 0.0000000
+Mass2 Z = 0.0000000
+
+Time=1
+Mass1 X = 0.8774729
+Mass1 Y = 0.0000000
+Mass1 Z = 0.0000000
+
+Mass2 X = 0.1225271
+Mass2 Y = 0.0000000
+Mass2 Z = 0.0000000
+
+etc...
+</code>
+Hmm - not so user friendly I figured...
+
+Since I had done all the simulations in three dimensions, I wanted to show the results in three dimensions.  Being the lazy guy I am, I also wanted a quick and easy way of showing the results - after all the simulator itself is the project, not some cool way to render the results.  To that end, I grabbed Microsofts standard OpenGl library (openGl is a pre-built bit of code which draws things in 3D using the graphics card) - all I had to do was give it some commands to say what to draw where!
+
+Well, thats pretty much the whole project - write my own very simple simulator, and feed the output of that into a graphics library to show the results onscreen in 3D.  There were a few addons I added later, like a graph to show how any property within the simulation changed over time, a user interface to let a user edit anything before the simulation starts, and some cool features only there for show, like the ability to shake the application window and have that reflected as forces added into the simulation.  I also added a bit of damping by modifying the equations above, and I added the ability for springs to "snap" when they got too long.
+
+Oh, and to demonstrate the features, I made some starting positions for the simulator which showed nice things - I made a model to show <a href="http://en.wikipedia.org/wiki/Newton's_cradle">newtons cradle</a>, to <a href="http://www.ioppublishing.com/activity/education/Projects/Teaching%20Advanced%20Physics/Vibrations%20and%20Waves/Images%20300/img_mid_4438.gif">simulate resonance</a>, and to simulate waves in either a string or a mesh.
+
+If anyone wants to fiddle with this more I've attached the program and the code.  Consider it all licensed Creative Commons (CC-BY-SA, for the documentation) and GPL (for the code)

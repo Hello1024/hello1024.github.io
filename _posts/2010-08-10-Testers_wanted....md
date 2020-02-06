@@ -1,0 +1,11 @@
+---
+layout: post
+title: Testers wanted...
+---
+
+For this:
+
+http://games.omattos.com/
+
+Google Chrome Dev channel recommended.  Firefox, Safari work but with bugs.  Give the link to your friends, but don't post it on digg/reddit etc. because the server can only handle about 30 people at a time right now.  In return, you must send me an email with comments or suggestions, particularly if you've tried to make a game.
+

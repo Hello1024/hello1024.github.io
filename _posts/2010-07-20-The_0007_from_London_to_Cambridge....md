@@ -1,0 +1,13 @@
+---
+layout: post
+title: The 0007 from London to Cambridge...
+---
+
+It isn't often you have fun on a train...  
+
+The 00:07 on Sunday evenings to Cambridge on the other hand is a different story.  For one thing, it seems to be free, because the ticket barriers are open, and hence you get to keep your ticket for later use, provided it's still valid of course.  That isn't what makes it "fun" though.
+
+Both times I've been on it I've met great people.  Once, I met a load of people headed back from a concert.  Everyone was social and got talking, and the hour and a half train journey was filled with laughter.  It was so much fun we took a photo of all the cool people:
+<img width="300px" src="http://sphotos.ak.fbcdn.net/hphotos-ak-snc4/hs117.snc4/36210_10150217080525332_772775331_13202441_5709849_n.jpg" />
+
+My first encounter on the 00:07 was lacking the academic conversation though, so, as luck would have it, I met a friendly theatre director, who told me about "<a href="http://www.pleasantdanger.com/">Wilde In New York</a>", a play he's putting on in Cambridge.  We were also talking with a cool guy from Iran who does E-Buisness management.
