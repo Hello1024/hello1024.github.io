@@ -15,9 +15,9 @@ Your battery likely already has a DW01 and a pair of mosfets inside to protect i
 
 You can trick the DW01 into turning your circuit off by raising it's CS pin to high (specifically above 0.15 volts for 30 milliseconds).  It will then turn your whole circuit off till either you disconnect your circuit, start charging the battery, or the CS pin goes low again.   To make sure you don't loose the overload protection of the DW01, you should drive the pin through a resistor between 3k and 20k.
 
-The CS pin can be accessed here on the common charging/protection boards: ![](images/dw01-highlight.jpg)
+The CS pin can be accessed here on the common charging/protection boards: ![](/images/dw01-highlight.jpg)
 
-And this is the typical circuit wiring ![](images/dw01-wiring.png).
+And this is the typical circuit wiring ![](/images/dw01-wiring.png).
 
 ## To turn things back on
 
