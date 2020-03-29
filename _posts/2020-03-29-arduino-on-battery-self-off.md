@@ -17,7 +17,7 @@ You can trick the DW01 into turning your circuit off by raising it's CS pin to h
 
 The CS pin can be accessed here on the common charging/protection boards: ![](images/dw01-highlight.jpg)
 
-And this is the typical circuit wiring !()[images/dw01-wiring.png].
+And this is the typical circuit wiring ![](images/dw01-wiring.png).
 
 ## To turn things back on
 
