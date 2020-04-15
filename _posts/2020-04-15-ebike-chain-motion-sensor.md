@@ -18,7 +18,7 @@ Try a new approach...
  * **Step 2**:  Put the chain near the break in the ferrite.
    ![](/images/ebike-chain.jpg)
  
-And you're done.  You can now measure the rate of movement of the chain, the direction the chain is moving, and the tension in the chain.
+And you're done.  You can now measure the rate of movement of the chain, the direction the chain is moving, and the tension in the chain.  As a bonus, the circuit doesn't mind getting wet, has no moving parts, and is non-contact.
 
 Here's how:
 
