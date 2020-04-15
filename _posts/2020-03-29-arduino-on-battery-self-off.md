@@ -11,7 +11,7 @@ Here's a trick to make that simpler and cheaper.
 
 ## Abuse the DW01 battery protection chip to power off your circuit.
 
-Your battery likely already has a DW01 and a pair of mosfets inside to protect it, or if you're using a [$1 battery charging and protection board](https://amzn.to/2UEzf6E),  it has one built in.
+Your battery likely already has a DW01 and a pair of mosfets inside to protect it, or if you're using a [$1 battery charging and protection board](https://amzn.to/2wDNz7k),  it has one built in.
 
 You can trick the DW01 into turning your circuit off by raising it's CS pin to high (specifically above 0.15 volts for 30 milliseconds).  It will then turn your whole circuit off till either you disconnect your circuit, start charging the battery, or the CS pin goes low again.   To make sure you don't loose the overload protection of the DW01, you should drive the pin through a resistor between 3k and 20k.
 
