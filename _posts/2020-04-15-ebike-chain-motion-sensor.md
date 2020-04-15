@@ -31,5 +31,6 @@ Here's how:
  * When there is a lot of tension on the chain, the chain rises up by a fraction of a millimeter (on my bike at least).  That has a big impact on the DC level of the signal.  This is your tension feedback.   It's a noisy signal, because it also picks up bumps in the road, so filter it a lot.
  
  * When the chain moves, the combination of the broken inductor not being perfectly symmetric, together with the chain possibly not being perfectly symmetric means the sine wave you see is slightly more of a sawtooth wave.  Look which way the teeth face (by looking at the phase of the 2nd harmonic), and that tells you the direction the chain is moving.   This only works after 5 or 6 links of then chain have passed, but it turns out that's fine for backpedal e-braking :-)
+ ![](/images/ebike-inductor-broken-diagram.png)
  
 ![](/images/ebike-chain-sensor-raw.png)
