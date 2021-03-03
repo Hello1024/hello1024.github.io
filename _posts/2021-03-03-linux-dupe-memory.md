@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How much memory does the linux kernel waste?
+title: How much memory does a Linux system waste?
 ---
 
 How much RAM on your laptop is sitting unused?  How much is empty?  How much is redundant?
@@ -33,7 +33,7 @@ Lets take a look at the 4k page of RAM with hash 0372a15ebe749b18d397c9dffdc55d2
 
 So it's a bit of a cookie.   Is it a good use of RAM to keep 5 copies?
 
-### What about free memory
+### What about free memory?
 
 This system claims:
 ```
@@ -46,4 +46,4 @@ Most of those 'free' pages contain data from previous programs, and is counted i
 
 ### Conclusion
 
-My RAM has a lot of duplicate data in.  This seems at odds with good design practices which should keep just one copy of big chunks of identical data.   Anyone fancy running the same code on their system, tracking down who is copying and allocating this data, and sending patches to the relevant projects to keep just one copy of this data and allow the RAM to be used for better things.
+My RAM has a lot of duplicate data in.  This seems counter to good design practices which should keep just one copy of big chunks of identical data.   Anyone fancy running the same code on their system, tracking down who is copying and allocating this data, and sending patches to the relevant projects to keep just one copy of this data and allow the RAM to be used for better things?
