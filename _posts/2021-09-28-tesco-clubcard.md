@@ -1,10 +1,10 @@
 ---
 layout: post
-title: My tesco clubcard
+title: My Tesco clubcard
 ---
 
 
-I think that tesco requiring a clubcard to get basic offers is silly.  I therefore present to you the universal clubcard:
+I think that tesco requiring a clubcard to get basic offers is silly.  I therefore present to you the universal Tesco Clubcard:
 
 Here is a picture of the QR barcode image to share:
 ![Tesco Clubcard Barcode Image](https://i.imgur.com/eFbgfL0.jpeg)
