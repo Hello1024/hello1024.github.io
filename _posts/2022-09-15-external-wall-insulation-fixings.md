@@ -16,6 +16,8 @@ But wait...   if there is a long metal screw in there, surely that will be condu
 
 Well yes!   I modelled it to find out how big the effect was:
 
+![image](https://user-images.githubusercontent.com/544753/190590216-8c38be90-2505-4a6f-a6ab-404650ae97e8.png)
+
 Colours show the temperature.   See the line across the image...   Thats a metal screw in a plastic plug.  They're transferring about 0.012 watts/Kelvin/square meter out of your house, and a typical installation on an english house [400 square meters of wall, average temperature difference of 15C for half the year, gas heated, gas costs 10c/kwh], that will cost you £30/year.
 
 Not too much, but over the lifetime of your house and all the other houses in the country, the cost (and the environmental damage) adds up to millions.
@@ -28,6 +30,8 @@ Another approach is to shorten the screw and change the design of the fixings.  
 
 ![new design](https://user-images.githubusercontent.com/544753/190432973-bef9b2bc-1168-4f85-b7c7-2dc63eed5b58.png)
 
-Download the fixing design here to 3d print (in ABS, 100% infill), or contact me and I'll send you a box of them.
+In the new design, the screw is 'sunk' by about half of the insulation thickness, dramatically reducing energy loss.
+
+[Download the fixing design here](https://www.thingiverse.com/thing:5515431) to 3d print (in ABS, 100% infill), or [contact me](https://omattos.com/contact) and I'll send you a box of them.
 
 
