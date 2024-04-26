@@ -4,7 +4,7 @@ title: Exploit Bounty for my stuff!
 ---
 
 
-$1000 reward if you can break into my stuff.    I have a mostly patched laptop, phone, and various other devices.
+US$ 1000 reward if you can break into my stuff.    I have a mostly patched laptop, phone, and various other devices.
 
 
 Rules:
