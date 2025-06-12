@@ -20,7 +20,7 @@ The cable would consist of an aluminium conductor surrounded by a silica insulat
 
 HVDC cable voltages are chosen to trade off the cost of the conductor (thicker=more amps!) with the cost of the insulator (thicker=more volts!).
 
-Assume that we want our cable to transmit 10 Gigawatts across the Atlantic ocean - which would make it on par with the biggest existing links.  Do [a bit of math](https://docs.google.com/spreadsheets/d/1Pwr18v2juYgfpGX553o18YlmazdwxXBZic9R5rKAo9w/edit?usp=sharing), and it turns out 14 megavolts is the sweet spot.    That's way higher than existing projects (typically 0.5 megavolts), but inverters based on MOSFETs scale with cost proportional to power (one can just stack the mosfets), so this shouldn't matter.
+Assume that we want our cable to transmit 10 Gigawatts across the Atlantic ocean - which would make it on par with the biggest existing links.  Do [a bit of math](https://docs.google.com/spreadsheets/d/1Pwr18v2juYgfpGX553o18YlmazdwxXBZic9R5rKAo9w/edit?usp=sharing), and it turns out 14 megavolts is the sweet spot.    That's way higher than existing projects (typically 0.5 megavolts), but inverters based on MOSFETs scale with cost proportional to power (one can just stack the mosfets and [optically control them](https://ieeexplore.ieee.org/document/7468138)), so this shouldn't matter.
 
 The convertor stations could use air as an insulator (you need 5 meters of dry air on all sides), but it might be better to do the whole thing in transformer oil (500mm on all sides), and/or encase the circuits in moulded silica glass (25mm case thickness, but you're going to have to be very careful with joint design).
 
@@ -33,6 +33,10 @@ The cable manufacturing itself requires new techniques to be developed.    One a
 Cable manufacture would occur at a constant speed of perhaps 2 kilometers per hour - crossing the Atlantic in 4 months.
 
 To build this cable, 80 mm diameter, at a sluggish walking pace, would require a massive 40,000 tons of sand (silicon dioxide), so it probably makes sense to resupply the manufacturing ship every ~week whilst it is producing, allowing a smaller 'furnace' boat to be used.
+
+### Laying process
+
+Once the cable comes out of the back of the ship, it will not have sufficient tensile strength to get to the bottom of the deepest oceans (6 kilometers!).  This can be solved by large buoys attached to rollers on the cable spaced every 50 meters or so behind the ship.  The rollers can be regulated entirely passively, since lowering a heavy object requires no energy.
 
 ## Storms
 
