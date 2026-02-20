@@ -23,6 +23,8 @@ Thats only the start too.  Agent models often get to see a lot of content in the
 
 They are mostly pointless tasks, but they're things where the result can be evaluated by another LLM, and that used to finetune the model.   Children do the same - building a tower of play blocks isn't a useful task, but it is good for learning.   Getting ahold of large amounts of user data is key to this approach.    Then you use an LLM to set the tasks, an LLM to evaluate the results, and then do differential training to reinforce more successful approaches to solving the problem.
 
+These 'pointless tasks' each individually don't have much training value - testing out 2 approaches to a problem and deciding which leads to better results is only a single 'bit'.    But when data is limited and compute is cheap, it becomes worth it...
+
 
 ### As compute gets cheaper, data will become the limiting factor
 
